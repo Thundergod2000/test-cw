@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codewatch-lite"
+version = "0.1.0"
+description = "Offline code governance tool — catches quality issues before they reach your repo"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["code-quality", "git", "static-analysis", "governance"]
+dependencies = [
+    "radon>=6.0.1",
+    "vulture>=2.10",
+]
+
+[project.scripts]
+codewatch = "codewatch.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["codewatch*"]

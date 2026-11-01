@@ -1,0 +1,6 @@
+radon>=6.0.1
+vulture>=2.10
+
+[dev]
+pytest>=7.0
+pytest-cov
